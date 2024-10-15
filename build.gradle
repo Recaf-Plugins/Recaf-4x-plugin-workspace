@@ -13,8 +13,8 @@ ext {
     // For Recaf versions:
     //  - Releases: https://mvnrepository.com/artifact/software.coley/recaf-core
     //  - Snapshots: https://jitpack.io/#Col-E/Recaf  (see commits tab)
-    recafVersion = '4.0.0-SNAPSHOT'
-    recafSnapshots = false
+    recafVersion = 'd5898f5d18'
+    recafSnapshots = true
 
     // This should point to the full name of the class that 'implements Plugin'
     pluginMainClass = 'org.example.plugin.ExamplePlugin'
