@@ -88,7 +88,7 @@ test {
 // We include the JavaFX plugin to allow you to quickly run Recaf from this project.
 javafx {
     version = '22.0.1'
-    modules = [ 'javafx.media' ]
+    modules = [ 'javafx.base', 'javafx.graphics', 'javafx.controls', 'javafx.media' ]
 }
 
 // The replace-token plugin synchronizes our @PluginInformation(version) with our project.version
