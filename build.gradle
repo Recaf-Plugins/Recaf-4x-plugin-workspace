@@ -1,7 +1,7 @@
 plugins {
     id 'java'
     id 'org.openjfx.javafxplugin' version '0.1.0'
-    id 'top.hendrixshen.replace-token'  version '1.1.2'
+    id 'top.hendrixshen.replace-token'  version '1.2.0'
 }
 
 group = 'org.example'
@@ -101,6 +101,7 @@ replaceToken {
     replace("##NAME##", project.ext.pluginName)
     replace("##DESC##", project.ext.pluginDesc)
     replace("##VERSION##", project.version)
+    replaceIn(project.ext.pluginMainClass)
 }
 
 // This dirty hack of a task creates the service entry in the output jar.
