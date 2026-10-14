@@ -7,6 +7,21 @@ import software.coley.recaf.analytics.logging.Logging;
 import software.coley.recaf.plugin.Plugin;
 import software.coley.recaf.plugin.PluginInformation;
 
+// Things worth noting when creating plugins:
+//
+// 1. The templated ##ID## and others are filled in when running 'gradlew build'
+//    - Edit values via 'build.gradle' in the ext { ... } block.
+//
+// 2. Plugins can @Inject any of Recaf's services into the plugin constructor.
+//    - Just add the parameter of the service you want to inject.
+//
+// 3. Plugins operate as their own dependency-injection containers.
+//    - Plugins can define their own @ApplicationScoped and @Dependent scoped beans
+//      and inject them within the plugin anywhere.
+//    - They also inherit all of Recaf's beans / services, so you can make
+//      an @ApplicationScoped bean in your plugin code, and inject Recaf services
+//      in its constructor as well.
+//
 @Dependent
 @PluginInformation(id = "##ID##", version = "##VERSION##", name = "##NAME##", description = "##DESC##")
 public class ExamplePlugin implements Plugin {
@@ -25,6 +40,6 @@ public class ExamplePlugin implements Plugin {
 
 	@Override
 	public void onDisable() {
-		logger.info("goodbye from the example plugin");
+		logger.info("Goodbye from the example plugin");
 	}
 }

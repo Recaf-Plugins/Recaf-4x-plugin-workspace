@@ -13,16 +13,16 @@ ext {
     // For Recaf versions:
     //  - Releases: https://mvnrepository.com/artifact/software.coley/recaf-core
     //  - Snapshots: https://jitpack.io/#Col-E/Recaf  (see commits tab)
-    recafVersion = '46c20fb52c'
+    recafVersion = '27fd6d0f92'
     recafSnapshots = true
 
     // This should point to the full name of the class that 'implements Plugin'
     pluginMainClass = 'org.example.plugin.ExamplePlugin'
 
     // These variables will change what plugin information is declared
+    pluginId   = 'example-plugin'
     pluginName = 'Example plugin'
     pluginDesc = 'This example plugin does nothing special, but you can add to it'
-    pluginId = group + '.' + project.name
 }
 
 // Recaf requires JDK 22 or higher.
@@ -44,6 +44,9 @@ java {
 repositories {
     mavenLocal()
     mavenCentral()
+
+    // For some Android support libraries
+    google()
 
     // For Recaf snapshot builds a few transitive dependencies
     maven { url 'https://jitpack.io' }
