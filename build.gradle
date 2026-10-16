@@ -101,7 +101,7 @@ replaceToken {
     replace("##NAME##", project.ext.pluginName)
     replace("##DESC##", project.ext.pluginDesc)
     replace("##VERSION##", project.version)
-    replaceIn(project.ext.pluginMainClass)
+    replaceIn(project.ext.pluginMainClass.replace('.', '/'))
 }
 
 // This dirty hack of a task creates the service entry in the output jar.
