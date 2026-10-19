@@ -22,6 +22,12 @@ import software.coley.recaf.plugin.PluginInformation;
 //      an @ApplicationScoped bean in your plugin code, and inject Recaf services
 //      in its constructor as well.
 //
+// 4. Keep UI-only behavior in a separate bean that observes UiInitializationEvent.
+//    - See ExampleUi: headless startup does not fire this event, so the plugin's
+//      core behavior can still load when JavaFX is unavailable.
+//    - Use Instance<MainMenuProvider> so the UI service is only requested once
+//      the UI initialization event is received.
+//
 @Dependent
 @PluginInformation(id = "##ID##", version = "##VERSION##", name = "##NAME##", description = "##DESC##")
 public class ExamplePlugin implements Plugin {
@@ -29,7 +35,7 @@ public class ExamplePlugin implements Plugin {
 
 	@Inject
 	public ExamplePlugin() {
-		// You can inject Recaf's services in this constructor.
+		// You can add Recaf's services in this constructor as parameters to inject them
 		//  - https://recaf.coley.software/dev/plugins-and-scripts/plugins.html
 	}
 

@@ -49,7 +49,7 @@ repositories {
     google()
 
     // For Recaf snapshot builds a few transitive dependencies
-    maven { url 'https://jitpack.io' }
+    maven { url = 'https://jitpack.io' }
 }
 
 configurations.configureEach {
